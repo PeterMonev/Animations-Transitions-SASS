@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,51 +12,49 @@
     <script type="module" src="/script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div id="loginForm" class="show">
-            <form >
-                <h2>Login</h2>
-                <div class="form-label-group">
-                    <input type="text" id="username" class="form-control" placeholder="Username" required >
-                    <label for="username">Username</label>
-                </div>
-                <div class="form-label-group">
-                    <input type="password" id="password" class="form-control" placeholder="Password" required>
-                    <label for="password">Password</label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-                <p class="text-right"><a href="#" id="showRegisterForm">Register</a></p>
-            </form>
-        </div>
-
-        <div id="registerForm" class="hide">
-            <form >
-                <h2>Register</h2>
-                <div class="form-label-group">
-                    <input type="text" id="newUsername" class="form-control" placeholder="Username" required autofocus>
-                    <label for="newUsername">Username</label>
-                </div>
-                <div class="form-label-group">
-                    <input type="email" id="email" class="form-control" placeholder="Email" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="form-label-group">
-                    <input type="tel" id="phone" class="form-control" placeholder="Phone" required>
-                    <label for="phone">Phone</label>
-                </div>
-                <div class="form-label-group">
-                    <input type="password" id="newPassword" class="form-control" placeholder="Password" required>
-                    <label for="newPassword">Password</label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block" id="registerButton" type="submit">Register</button>
-                <p class="text-right"><a href="#" id="showLoginForm">Login</a></p>
-            </form>
-        </div>
-
-        <div id="registerSuccess" class="hide">
-            <h2>Successfully registered!</h2>
-        </div>
+    <div class="container" id="loginContainer">
+        <form >
+            <h2>Login</h2>
+            <div class="form-label-group">
+                <input type="text" id="username" class="form-control" placeholder="Username" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="form-label-group">
+                <input type="password" id="password" class="form-control" placeholder="Password" required>
+                <label for="password">Password</label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            <p class="text-right"><a href="#" id="showRegisterForm">Register</a></p>
+        </form>
     </div>
 
+    <div class="container" id="registerContainer" style="display: none;">
+        <form >
+            <h2>Register</h2>
+            <div class="form-label-group">
+                <input type="text" id="newUsername" class="form-control" placeholder="Username" required>
+                <label for="newUsername">Username</label>
+            </div>
+            <div class="form-label-group">
+                <input type="email" id="email" class="form-control" placeholder="Email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="form-label-group">
+                <input type="tel" id="phone" class="form-control" placeholder="Phone" required>
+                <label for="phone">Phone</label>
+            </div>
+            <div class="form-label-group">
+                <input type="password" id="newPassword" class="form-control" placeholder="Password" required>
+                <label for="newPassword">Password</label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" id="registerButton" type="submit">Register</button>
+            <p class="text-right"><a href="#" id="showLoginForm">Login</a></p>
+        </form>
+    </div>
+
+    <div id="registerSuccess" class="hide">
+        <h2>Successfully registered!</h2>
+    </div>
 </body>
 </html>
+

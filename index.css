@@ -1,1 +1,87 @@
-/*# sourceMappingURL=index.css.map */
+body {
+  background-color: whitesmoke;
+  padding: 0 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  transform: translateX(0);
+  transition: transform 0.5s ease-out;
+}
+
+#registerContainer {
+  right: -100%;
+}
+
+form h2 {
+  margin-bottom: 30px;
+}
+form .form-label-group {
+  position: relative;
+  margin-bottom: 30px;
+  border: none;
+}
+form .form-label-group input {
+  height: 40px;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 1;
+  border-radius: 20px;
+  border: 2px solid #59dbd2;
+  transition: 0.5s ease-in-out;
+}
+form .form-label-group input:not(:-moz-placeholder-shown) + label {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: black;
+  border-color: #59dbd2;
+  top: -30px;
+  left: 5px;
+}
+form .form-label-group input:not(:placeholder-shown) + label, form .form-label-group input:focus + label {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: black;
+  border-color: #59dbd2;
+  top: -30px;
+  left: 5px;
+}
+form .form-label-group label {
+  position: absolute;
+  top: 12px;
+  left: 17px;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  line-height: 1;
+  color: black;
+  cursor: text;
+  transition: all 0.4s ease-in-out;
+  border: none;
+}
+form button {
+  margin-top: 20px;
+  background: linear-gradient(180deg, rgb(89, 219, 210) 0%, rgb(61, 61, 61) 59%, rgb(102, 252, 241) 100%);
+  border: none !important;
+  border-color: none !important;
+}
+form a {
+  display: block;
+  margin-top: 20px;
+  color: black;
+}
+
+.hide {
+  display: none;
+}/*# sourceMappingURL=index.css.map */
