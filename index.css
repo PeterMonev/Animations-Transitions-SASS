@@ -75,11 +75,11 @@ form button {
   background: linear-gradient(180deg, rgb(89, 219, 210) 0%, rgb(61, 61, 61) 59%, rgb(102, 252, 241) 100%);
   border: none !important;
   border-color: none !important;
+  border-radius: 30px !important;
 }
 form a {
   display: block;
   margin-top: 20px;
-  color: black;
 }
 
 .hide {
