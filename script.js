@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+// Register button fuciton
+$('#registerButton').click(function(event){
+    event.preventDefault();
+    $("#registerContainer").hide();
+    $("#registerSuccess").show();
+});
+
 // Animation login move out logic
 
     $("#showRegisterForm").click(function (event) {

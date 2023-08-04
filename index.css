@@ -20,6 +20,7 @@ body {
 
 #registerContainer {
   right: 0%;
+  display: none;
 }
 
 form h2 {
