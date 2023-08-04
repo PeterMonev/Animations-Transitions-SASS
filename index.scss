@@ -20,7 +20,7 @@ body {
 }
 
 #registerContainer {
-  right: -100%;
+  right: 0%;
 }
 
 
@@ -76,6 +76,24 @@ form {
     border: none !important;
     border-color: none !important;
     border-radius: 30px !important;
+    transition: 2s ease;
+    cursor: pointer;
+    outline: none;
+    position:relative;
+    overflow: hidden;
+
+    &:hover {
+     background: linear-gradient(180deg, rgba(61,61,61,1) 12%, rgba(89,219,210,1) 56%, rgba(61,61,61,1) 96%);
+    }
+
+    .btn-ripple {
+      background-color: rgba(255, 255, 255, 0.3);
+      position:absolute;
+      border-radius: 100%;
+      animation: ripple 1s;
+      opacity: 0;
+      transform: scale(0);
+  }
   }
 
   a {
@@ -86,4 +104,18 @@ form {
 
 .hide {
   display: none;
+}
+
+// Animation
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+}
+
+to {
+    opacity: 0;
+    transform: scale(10);
+}
 }
