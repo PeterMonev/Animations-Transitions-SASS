@@ -39,15 +39,48 @@ $(document).ready(function () {
 
   // Register form
 
-  $("input").focus(function () {
-    $(this).removeClass("error");
+  $("#registerForm").submit(function (event) {
+    event.preventDefault();
+
+    const username = $(this).find("#newUsername").val();
+    const email = $(this).find("#email").val();
+    const phone = $(this).find("#phone").val();
+    const password = $(this).find("#newPassword").val();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let isRegister = true;
+
+    if (username === "" || username === null) {
+      $("#newUsername").addClass("error");
+      isRegister = false;
+    }
+
+    if (!emailRegex.test(email)) {
+      $("#email").addClass("error");
+      isRegister = false;
+    }
+
+    if (phone < 4 && phone < 10) {
+      $("#phone").addClass("error");
+      isRegister = false;
+    }
+
+    if (password < 4 && password < 20) {
+      $("#newPassword").addClass("error");
+      isRegister = false;
+    }
+
+    if (!isRegister) {
+      return;
+    } else {
+      //  Success register button fuciton
+      $("#registerContainer").hide();
+      $("#registerSuccess").show();
+    }
   });
 
-  // Register button fuciton
-  $("#registerButton").click(function (event) {
-    event.preventDefault();
-    $("#registerContainer").hide();
-    $("#registerSuccess").show();
+  $("input").focus(function () {
+    $(this).removeClass("error");
   });
 
   // Animation login move out logic
@@ -78,17 +111,17 @@ $(document).ready(function () {
       .animate({ left: "35%" }, 1000);
   });
 
-  // Placeholder hide logic
+  //   // Placeholder hide logic
 
-  $("input")
-    .focus(function () {
-      $(this)
-        .attr("data-placeholder", $(this).attr("placeholder"))
-        .attr("placeholder", "");
-    })
-    .blur(function () {
-      $(this).attr("placeholder", $(this).attr("data-placeholder"));
-    });
+  //   $("input")
+  //     .focus(function () {
+  //       $(this)
+  //         .attr("data-placeholder", $(this).attr("placeholder"))
+  //         .attr("placeholder", "");
+  //     })
+  //     .blur(function () {
+  //       $(this).attr("placeholder", $(this).attr("data-placeholder"));
+  //     });
 
   // Button ripple function
 
