@@ -1,52 +1,107 @@
 $(document).ready(function () {
+  // Register and Login form submit and validation functionality
 
-// Register button fuciton
-$('#registerButton').click(function(event){
+  //Login form
+
+  $("#loginForm").submit(function (event) {
+    event.preventDefault();
+
+    const username = $(this).find("#username").val();
+    const password = $(this).find("#password").val();
+    let isLogin = true;
+
+    if (username === "" || username === null) {
+      $("#username").addClass("error");
+      isLogin = false;
+    }
+
+    if (password < 4 && password < 20) {
+      $("#password").addClass("error");
+      isLogin = false;
+    }
+
+    if (!isLogin) {
+      return;
+    } else {
+      // Divs accordion functionality
+
+      $("#loginContainer").hide();
+      $("#accordionContainer").show();
+      $(".section-content").hide();
+      $(".section").first().find(".section-content").show();
+
+      $(".section-header").click(function () {
+        $(".section-content").slideUp();
+        $(this).next(".section-content").slideDown();
+      });
+    }
+  });
+
+  // Register form
+
+  $("input").focus(function () {
+    $(this).removeClass("error");
+  });
+
+  // Register button fuciton
+  $("#registerButton").click(function (event) {
     event.preventDefault();
     $("#registerContainer").hide();
     $("#registerSuccess").show();
-});
+  });
 
-// Animation login move out logic
+  // Animation login move out logic
 
-    $("#showRegisterForm").click(function (event) {
-        event.preventDefault();
-        $("#loginContainer").animate({ left: '0%' }, 700).fadeOut(500, function() {
-            $(this).hide();
-        });
-        $("#registerContainer").fadeIn(1500).show().animate({ left: '0%' }, 1000);
+  $("#showRegisterForm").click(function (event) {
+    event.preventDefault();
+    $("#loginContainer")
+      .animate({ left: "0%" }, 700)
+      .fadeOut(500, function () {
+        $(this).hide();
+      });
+    $("#registerContainer").fadeIn(1500).show().animate({ left: "0%" }, 1000);
+  });
+
+  // Animation register move in logic
+
+  $("#showLoginForm").click(function (event) {
+    event.preventDefault();
+    $("#registerContainer")
+      .animate({ left: "75%" }, 700)
+      .fadeOut(500, function () {
+        $(this).hide();
+      });
+    $("#loginContainer")
+      .css("left", "0%")
+      .fadeIn(1500)
+      .show()
+      .animate({ left: "35%" }, 1000);
+  });
+
+  // Placeholder hide logic
+
+  $("input")
+    .focus(function () {
+      $(this)
+        .attr("data-placeholder", $(this).attr("placeholder"))
+        .attr("placeholder", "");
+    })
+    .blur(function () {
+      $(this).attr("placeholder", $(this).attr("data-placeholder"));
     });
 
-// Animation register move in logic
-    
-    $("#showLoginForm").click(function (event) {
-        event.preventDefault();
-        $("#registerContainer").animate({ left: '75%' }, 700).fadeOut(500, function() {
-            $(this).hide();
-        });
-        $("#loginContainer").css('left', '0%').fadeIn(1500).show().animate({ left: '35%' }, 1000);
-    });
+  // Button ripple function
 
-// Placeholder hide logic
-  
-    $("input").focus(function () {
-        $(this).attr("data-placeholder", $(this).attr("placeholder")).attr("placeholder", "");
-    }).blur(function () {
-        $(this).attr("placeholder", $(this).attr("data-placeholder"));
-    });
+  function RippleStyle(width, height, posX, posY) {
+    this.width = width <= height ? height : width;
+    this.height = width <= height ? height : width;
+    this.top = posY - this.height * 0.5;
+    this.left = posX - this.width * 0.5;
+  }
 
-// Button ripple function 
-
-function RippleStyle(width, height, posX, posY){
-    this.width = (width <= height) ? height : width;
-    this.height = (width <= height) ? height : width;
-    this.top = posY - (this.height * .5);
-    this.left = posX - (this.width * .5);
-}
-
-$('.btn').click(function(e) {
+  $(".btn").click(function (e) {
     const rippleEl = $('<span class="btn-ripple"></span>').appendTo(this);
-   
+
     const pos = $(this).offset();
 
     const width = $(this).outerWidth();
@@ -58,31 +113,13 @@ $('.btn').click(function(e) {
     const rippleStyle = new RippleStyle(width, height, posX, posY);
 
     rippleEl.css(rippleStyle);
-   
+  });
+
+  $(".btn").on(
+    "animationend webkitAnimationEnd oanimationend MSAanimationEnd",
+    ".btn-ripple",
+    function () {
+      $(this).remove();
+    }
+  );
 });
-
-$('.btn').on('animationend webkitAnimationEnd oanimationend MSAanimationEnd', '.btn-ripple', function(){
-  $(this).remove();
-})
-
-// Divs accordion functionality
-
-$('#loginButton').click(function(event){
-    event.preventDefault();
-
-    $("#loginContainer").hide();
-    $("#accordionContainer").show();
-    $('.section-content').hide();
-    $('.section').first().find('.section-content').show();
-
-      $('.section-header').click(function() {
-
-         $('.section-content').slideUp();
-         $(this).next('.section-content').slideDown();
-   
-         });
-  
-});
-
-});
-  
