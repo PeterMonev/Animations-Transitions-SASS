@@ -24,17 +24,19 @@ $(document).ready(function () {
       return;
     } else {
       // Divs accordion functionality
-
       $("#loginContainer").hide();
       $("#accordionContainer").show();
       $(".section-content").hide();
       $(".section").first().find(".section-content").show();
-
-      $(".section-header").click(function () {
-        $(".section-content").slideUp();
-        $(this).next(".section-content").slideDown();
-      });
+  
+     
+     
     }
+  });
+
+  $(".section-header").click(function () {
+    $(".section-content").slideUp();
+    $(this).next(".section-content").slideDown();
   });
 
   // Register form
@@ -146,6 +148,8 @@ $(document).ready(function () {
 
   // Starry sky logic
 
+$('#skyOnbtn').click(stars)
+
 function stars(){
     let count = 500;
     let scene = $(".header");
@@ -163,14 +167,20 @@ function stars(){
         star.style.height = 1 + size + 'px';
 
         star.style.animationDuration = 5 + duration + 's';
-        star.style.animationDelay = duration + 's';
+        star.style.animationDelay =  duration + 's';
     
         scene.append(star)
         i++;
       }
 }
 
-  stars();
+$('#watchSkyBtn').click(function(){
+  $('body').children().slice(1,5).hide();
+  console.log($('body').children());
+
+})
+
+  
 });
 
 

@@ -8,11 +8,13 @@
 }
 
 .header {
-  position: relative;
-  width: 100vw;
-  height: 75vh;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 70vh;
   overflow: hidden;
-  margin-bottom: 200px;
+  margin-top: 0;
+  z-index: -1;
 }
 .header i {
   position: absolute;
@@ -201,15 +203,9 @@ form a {
   display: none;
 }
 
-.starsBtnDiv {
-  position: absolute;
-  top: 300px;
-  right: 200px;
-  padding: 500px;
-}
-
 #accordionContainer {
   display: none;
+  z-index: 0;
 }
 #accordionContainer .section {
   border: 1px solid #cccccc;
@@ -240,6 +236,21 @@ form a {
 #accordionContainer .section .section-content {
   padding: 10px 10px;
   font-size: 16px;
+}
+
+.toSkyBtn {
+  position: absolute;
+  top: 90%;
+}
+.toSkyBtn button {
+  border: none;
+  margin-right: 20px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgb(89, 219, 210) 0%, rgb(61, 61, 61) 59%, rgb(102, 252, 241) 100%);
+  transition: background-color 1s ease;
+}
+.toSkyBtn button:hover {
+  background: linear-gradient(180deg, rgb(61, 61, 61) 12%, rgb(89, 219, 210) 56%, rgb(61, 61, 61) 96%);
 }
 
 @keyframes ripple {
