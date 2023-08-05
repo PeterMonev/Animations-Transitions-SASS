@@ -8,7 +8,6 @@ body {
 }
 
 .container {
-  max-width: 400px;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 30px;
@@ -101,6 +100,40 @@ form a {
 
 .hide {
   display: none;
+}
+
+#accordionContainer {
+  display: none;
+}
+#accordionContainer .section {
+  border: 1px solid #cccccc;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  min-width: 320px;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  border: 2px solid black;
+}
+#accordionContainer .section .section-header {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+  background-color: #59dbd2;
+}
+#accordionContainer .section .section-header:hover {
+  color: #007BFF;
+}
+#accordionContainer .section .section-header h3 {
+  padding-left: 20px;
+  margin: 0;
+  color: #ffffff;
+}
+#accordionContainer .section .section-content {
+  padding: 10px 10px;
+  font-size: 16px;
 }
 
 @keyframes ripple {

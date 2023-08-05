@@ -24,7 +24,7 @@ $('#registerButton').click(function(event){
         $("#registerContainer").animate({ left: '75%' }, 700).fadeOut(500, function() {
             $(this).hide();
         });
-        $("#loginContainer").css('left', '0%').fadeIn(1500).show().animate({ left: '40%' }, 1000);
+        $("#loginContainer").css('left', '0%').fadeIn(1500).show().animate({ left: '35%' }, 1000);
     });
 
 // Placeholder hide logic
@@ -65,5 +65,24 @@ $('.btn').on('animationend webkitAnimationEnd oanimationend MSAanimationEnd', '.
   $(this).remove();
 })
 
-  });
+// Divs accordion functionality
+
+$('#loginButton').click(function(event){
+    event.preventDefault();
+
+    $("#loginContainer").hide();
+    $("#accordionContainer").show();
+    $('.section-content').hide();
+    $('.section').first().find('.section-content').show();
+
+      $('.section-header').click(function() {
+
+         $('.section-content').slideUp();
+         $(this).next('.section-content').slideDown();
+   
+         });
+  
+});
+
+});
   
