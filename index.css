@@ -1,10 +1,33 @@
-body {
+.body {
   background-color: whitesmoke;
-  padding: 0 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  position: relative;
+}
+
+.header {
+  position: relative;
+  width: 100vw;
+  height: 75vh;
+  overflow: hidden;
+  margin-bottom: 200px;
+}
+.header i {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: starryStar linear infinite;
+}
+
+.sky {
+  background-image: url(/148421.jpg);
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .container {
@@ -178,6 +201,13 @@ form a {
   display: none;
 }
 
+.starsBtnDiv {
+  position: absolute;
+  top: 300px;
+  right: 200px;
+  padding: 500px;
+}
+
 #accordionContainer {
   display: none;
 }
@@ -236,5 +266,19 @@ form a {
   }
   20%, 40%, 60%, 80% {
     transform: translateX(20px) rotate(2deg);
+  }
+}
+@keyframes starryStar {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100px);
   }
 }/*# sourceMappingURL=index.css.map */

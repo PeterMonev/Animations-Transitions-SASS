@@ -111,18 +111,6 @@ $(document).ready(function () {
       .animate({ left: "35%" }, 1000);
   });
 
-  //   // Placeholder hide logic
-
-  //   $("input")
-  //     .focus(function () {
-  //       $(this)
-  //         .attr("data-placeholder", $(this).attr("placeholder"))
-  //         .attr("placeholder", "");
-  //     })
-  //     .blur(function () {
-  //       $(this).attr("placeholder", $(this).attr("data-placeholder"));
-  //     });
-
   // Button ripple function
 
   function RippleStyle(width, height, posX, posY) {
@@ -155,4 +143,34 @@ $(document).ready(function () {
       $(this).remove();
     }
   );
+
+  // Starry sky logic
+
+function stars(){
+    let count = 500;
+    let scene = $(".header");
+    let i = 0 
+      while(i < count){
+        let star = document.createElement('i');
+        let x = Math.floor(Math.random() * window.innerWidth);
+        let y = Math.floor(Math.random() * window.innerHeight);
+        let duration = Math.random() * 10;
+        let size = Math.random() * 3;
+
+        star.style.left = x + 'px';
+        star.style.top = y + 'px';
+        star.style.width = 1 + size + 'px';
+        star.style.height = 1 + size + 'px';
+
+        star.style.animationDuration = 5 + duration + 's';
+        star.style.animationDelay = duration + 's';
+    
+        scene.append(star)
+        i++;
+      }
+}
+
+  stars();
 });
+
+
