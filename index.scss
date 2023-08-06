@@ -291,6 +291,8 @@ form {
         top: -30px;
         left: 5px;
       }
+
+      
     }
 
     label {
@@ -305,6 +307,13 @@ form {
       cursor: text;
       transition: all 0.4s ease-in-out;
       border: none;
+    }
+
+    p {
+      color: red;
+      text-align: center;
+      margin-top: 5px;
+      font-size: 12px;
     }
   }
 

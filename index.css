@@ -287,6 +287,12 @@ form .form-label-group label {
   transition: all 0.4s ease-in-out;
   border: none;
 }
+form .form-label-group p {
+  color: red;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 12px;
+}
 form button {
   margin-top: 20px;
   background: linear-gradient(180deg, rgb(89, 219, 210) 0%, rgb(61, 61, 61) 59%, rgb(102, 252, 241) 100%);

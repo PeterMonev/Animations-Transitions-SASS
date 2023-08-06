@@ -36,10 +36,12 @@
       <div class="form-label-group">
         <input type="text" id="username" class="form-control" placeholder="">
         <label for="username">Username</label>
+        <p id="usernameError" class="hide">Please enter Username!</p>
       </div>
       <div class="form-label-group">
         <input type="password" id="password" class="form-control" placeholder="">
         <label for="password">Password</label>
+        <p id="passwordError" class="hide">Incorrect password!</p>
       </div>
       <button id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
       <p class="text-right"><a href="#" id="showRegisterForm">Register</a></p>
@@ -70,18 +72,22 @@
       <div class="form-label-group">
         <input type="text" id="newUsername" class="form-control" placeholder="" >
         <label for="newUsername">Username</label>
+        <p id="newUsernameError" class="hide">Please enter Username!</p>
       </div>
       <div class="form-label-group">
         <input type="email" id="email" class="form-control" placeholder="" >
         <label for="email">Email</label>
+        <p id="emailError" class="hide">Email must be like this: example@abv.bg</p>
       </div>
       <div class="form-label-group">
         <input type="tel" id="phone" class="form-control" placeholder="" >
         <label for="phone">Phone</label>
+        <p id="phoneError" class="hide">Phone Number must be between from 4 to 10 characters!</p>
       </div>
       <div class="form-label-group">
         <input type="password" id="newPassword" class="form-control" placeholder="" >
         <label for="password">Password</label>
+        <p id="newPasswordError" class="hide">Password must be between from 4 to 10 characters!</p>
       </div>
       <button class="btn btn-lg btn-primary btn-block" id="registerButton" type="submit">Register</button>
       <p class="text-right"><a href="#" id="showLoginForm">Login</a></p>

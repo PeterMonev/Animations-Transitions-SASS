@@ -12,24 +12,28 @@ $(document).ready(function () {
 
     if (username === "" || username === null) {
       $("#username").addClass("error");
+      $("#usernameError").show().fadeIn(2000);;
       isLogin = false;
     }
 
     if (password < 4 && password < 20) {
       $("#password").addClass("error");
+      $("#passwordError").show().fadeIn(2000);
       isLogin = false;
     }
 
     if (!isLogin) {
       return;
     } else {
-      // Divs accordion functionality
+      // Divs accordion show
       $("#loginContainer").hide();
       $("#accordionContainer").show();
       $(".section-content").hide();
       $(".section").first().find(".section-content").show();
     }
   });
+
+  // Divsaccordion functionality
 
   $(".section-header").click(function () {
     $(".section-content").slideUp();
@@ -51,21 +55,25 @@ $(document).ready(function () {
 
     if (username === "" || username === null) {
       $("#newUsername").addClass("error");
+      $("#newUsernameError").show().fadeIn(2000);
       isRegister = false;
     }
 
     if (!emailRegex.test(email)) {
       $("#email").addClass("error");
+      $("#emailError").show().fadeIn(2000);
       isRegister = false;
     }
 
     if (phone < 4 && phone < 10) {
       $("#phone").addClass("error");
+      $("#phoneError").show().fadeIn(2000);
       isRegister = false;
     }
 
     if (password < 4 && password < 20) {
       $("#newPassword").addClass("error");
+      $("#newPasswordError").show().fadeIn(2000);
       isRegister = false;
     }
 
@@ -79,7 +87,9 @@ $(document).ready(function () {
   });
 
   $("input").focus(function () {
-    $(this).removeClass("error");
+    $(this).removeClass("error")
+    $(this).parent().children().eq(2).hide().fadeOut();
+  
   });
 
   // Animation login move out logic
