@@ -175,12 +175,46 @@ function stars(){
 }
 
 $('#watchSkyBtn').click(function(){
-  $('body').children().slice(1,5).hide();
-  console.log($('body').children());
+  $('.body').children().slice(1,5).hide();
+  console.log($('.body').children());
 
 })
 
+// Scrollable functionality
+
+const sections = $('section');
+const windowHeigth = window.innerHeight;
+const navigation = $('.navigation');
+console.log();
+
+function reset(){
+  for(let i = 0; i < navigation.children().length; i++){
+    navigation.children().removeClass('selected');
+  }
+}
+
+$(window).on('scroll', function() {
+  const scrollTop = $(window).scrollTop();
   
+  sections.each(function(index){
+    let section = $(this);
+ 
+    if(section.offset().top < scrollTop + windowHeigth /2 && scrollTop < section.offset().top + windowHeigth / 2){
+          reset();
+          navigation.children().eq(index).addClass('selected'); 
+    }
+
+  })
 });
 
+$('.navigation li').each(function(index, item){
+  $(item).click(function(){
+     window.scrollTo({
+      top: index * windowHeigth,
+      behavior: 'smooth'
+     });
+  });
+});
 
+  
+});
