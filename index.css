@@ -30,17 +30,50 @@
   transform: scale(2);
 }
 
-.otherSection {
+body .otherSection {
   min-height: 100vh;
   color: wheat;
   text-align: center;
   position: relative;
+  font-size: 24px;
 }
-.otherSection div {
+body .otherSection div {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+body section:nth-child(3) {
+  background-image: url(/assets/dario-bronnimann-0bnWLAbAO64-unsplash.jpg);
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+}
+body section:nth-child(4) {
+  background-image: url(/assets/nicole-avagliano-StCrWOWx2E8-unsplash.jpg);
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+}
+body section:nth-child(5) {
+  background-image: url(/assets/casey-horner-RmoWqDCqN2E-unsplash.jpg);
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+}
+body section:nth-child(6) {
+  background-image: url(/assets/ivana-cajina-asuyh-_ZX54-unsplash.jpg);
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .header {
@@ -60,7 +93,7 @@
 }
 
 .sky {
-  background-image: url(/148421.jpg);
+  background-image: url(/assets/148421.jpg);
   -o-object-fit: contain;
      object-fit: contain;
   background-repeat: no-repeat, repeat;
@@ -280,14 +313,27 @@ form a {
   top: 90%;
 }
 .toSkyBtn button {
-  border: none;
-  margin-right: 20px;
-  border-radius: 20px;
+  margin-top: 20px;
   background: linear-gradient(180deg, rgb(89, 219, 210) 0%, rgb(61, 61, 61) 59%, rgb(102, 252, 241) 100%);
-  transition: background-color 1s ease;
+  border: none !important;
+  border-color: none !important;
+  border-radius: 30px !important;
+  transition: 2s ease;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  overflow: hidden;
 }
 .toSkyBtn button:hover {
   background: linear-gradient(180deg, rgb(61, 61, 61) 12%, rgb(89, 219, 210) 56%, rgb(61, 61, 61) 96%);
+}
+.toSkyBtn button .btn-ripple {
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  border-radius: 100%;
+  animation: ripple 1s;
+  opacity: 0;
+  transform: scale(0);
 }
 
 @keyframes ripple {

@@ -40,26 +40,65 @@ $colors: (
     &.selected, &:hover {
       transform: scale(2.0);
     }
+    
   }
 }
 
 
-.otherSection{
-  min-height: 100vh;
-  color: wheat;
-  text-align: center;
-  position: relative;
+body {
+
+  .otherSection{
+    min-height: 100vh;
+    color: wheat;
+    text-align: center;
+    position: relative;
+    font-size: 24px;
   
-  div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+    div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
+
+      
+   section:nth-child(3) {
+    background-image: url(/assets/dario-bronnimann-0bnWLAbAO64-unsplash.jpg);
+    object-fit: contain;
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+   section:nth-child(4){
+    background-image: url(/assets/nicole-avagliano-StCrWOWx2E8-unsplash.jpg);
+    object-fit: contain;
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  section:nth-child(5){
+    background-image: url(/assets/casey-horner-RmoWqDCqN2E-unsplash.jpg);
+    object-fit: contain;
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  section:nth-child(6){
+    background-image: url(/assets/ivana-cajina-asuyh-_ZX54-unsplash.jpg);
+    object-fit: contain;
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
 }
 
 
+// Stars header sections
 
 .header{
   position: absolute;
@@ -79,7 +118,7 @@ $colors: (
 }
 
 .sky {
-  background-image: url(/148421.jpg);
+  background-image: url(/assets/148421.jpg);
   object-fit: contain;
   background-repeat: no-repeat, repeat;
   background-position: center;
@@ -308,15 +347,30 @@ form {
   top: 90%;
   
   button {
-    border: none;
-    margin-right: 20px;
-    border-radius: 20px;
+    margin-top: 20px;
     background: linear-gradient(180deg, rgba(89,219,210,1) 0%, rgba(61,61,61,1) 59%, rgba(102,252,241,1) 100%);
-    transition: background-color 1s ease;
+    border: none !important;
+    border-color: none !important;
+    border-radius: 30px !important;
+    transition: 2s ease;
+    cursor: pointer;
+    outline: none;
+    position:relative;
+    overflow: hidden;
 
     &:hover {
-      background: linear-gradient(180deg, rgba(61,61,61,1) 12%, rgba(89,219,210,1) 56%, rgba(61,61,61,1) 96%);
+     background: linear-gradient(180deg, rgba(61,61,61,1) 12%, rgba(89,219,210,1) 56%, rgba(61,61,61,1) 96%);
     }
+
+    .btn-ripple {
+      background-color: rgba(255, 255, 255, 0.3);
+      position:absolute;
+      border-radius: 100%;
+      animation: ripple 1s;
+      opacity: 0;
+      transform: scale(0);
+  }
+  
   }
 
 }
