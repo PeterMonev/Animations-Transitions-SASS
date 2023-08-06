@@ -28,9 +28,6 @@ $(document).ready(function () {
       $("#accordionContainer").show();
       $(".section-content").hide();
       $(".section").first().find(".section-content").show();
-  
-     
-     
     }
   });
 
@@ -148,12 +145,26 @@ $(document).ready(function () {
 
   // Starry sky logic
 
-$('#skyOnbtn').click(stars)
+ let isStartStarts = true;
+ stars();
+
+$('#skyOnbtn').click(function() {{
+    if(isStartStarts){
+      isStartStarts = false
+      $(".header").empty()
+
+    } else {
+      isStartStarts = true;
+      stars();
+    }
+}})
+
 
 function stars(){
     let count = 500;
     let scene = $(".header");
     let i = 0 
+
       while(i < count){
         let star = document.createElement('i');
         let x = Math.floor(Math.random() * window.innerWidth);
@@ -172,13 +183,27 @@ function stars(){
         scene.append(star)
         i++;
       }
+
+    
 }
 
-$('#watchSkyBtn').click(function(){
-  $('.body').children().slice(1,5).hide();
-  console.log($('.body').children());
+let isLoginFormShown = true;  
 
-})
+$('#watchSkyBtn').click(function() {
+  const loginForm = $('.main').find('#loginContainer');
+
+  if (isLoginFormShown) {
+
+    $('.main').children().slice(1,5).hide();
+    $(this).text('Go to Login');
+  } else {
+
+    loginForm.show();
+    $(this).text('Go to watch starts');
+  }
+
+  isLoginFormShown = !isLoginFormShown;
+});
 
 // Scrollable functionality
 
