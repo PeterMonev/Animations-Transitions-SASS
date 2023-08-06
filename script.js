@@ -87,7 +87,7 @@ $(document).ready(function () {
   $("#showRegisterForm").click(function (event) {
     event.preventDefault();
     $("#loginContainer")
-      .animate({ left: "0%" }, 700)
+      .animate({ left: "12%" }, 700)
       .fadeOut(500, function () {
         $(this).hide();
       });
@@ -99,7 +99,7 @@ $(document).ready(function () {
   $("#showLoginForm").click(function (event) {
     event.preventDefault();
     $("#registerContainer")
-      .animate({ left: "75%" }, 700)
+      .animate({ left: "50%" }, 700)
       .fadeOut(500, function () {
         $(this).hide();
       });
@@ -107,7 +107,7 @@ $(document).ready(function () {
       .css("left", "0%")
       .fadeIn(1500)
       .show()
-      .animate({ left: "35%" }, 1000);
+      .animate({ left: "50%" }, 1000);
   });
 
   // Button ripple function
@@ -145,47 +145,47 @@ $(document).ready(function () {
 
   // Starry sky logic
 
- let isStartStarts = true;
- stars();
+//  let isStartStarts = true;
+//  stars();
 
-$('#skyOnbtn').click(function() {{
-    if(isStartStarts){
-      isStartStarts = false
-      $(".header").empty()
+// $('#skyOnbtn').click(function() {{
+//     if(isStartStarts){
+//       isStartStarts = false
+//       $(".header").empty()
 
-    } else {
-      isStartStarts = true;
-      stars();
-    }
-}})
+//     } else {
+//       isStartStarts = true;
+//       stars();
+//     }
+// }})
 
 
-function stars(){
-    let count = 500;
-    let scene = $(".header");
-    let i = 0 
+// function stars(){
+//     let count = 500;
+//     let scene = $(".header");
+//     let i = 0 
 
-      while(i < count){
-        let star = document.createElement('i');
-        let x = Math.floor(Math.random() * window.innerWidth);
-        let y = Math.floor(Math.random() * window.innerHeight);
-        let duration = Math.random() * 10;
-        let size = Math.random() * 3;
+//       while(i < count){
+//         let star = document.createElement('i');
+//         let x = Math.floor(Math.random() * window.innerWidth);
+//         let y = Math.floor(Math.random() * window.innerHeight);
+//         let duration = Math.random() * 10;
+//         let size = Math.random() * 3;
 
-        star.style.left = x + 'px';
-        star.style.top = y + 'px';
-        star.style.width = 1 + size + 'px';
-        star.style.height = 1 + size + 'px';
+//         star.style.left = x + 'px';
+//         star.style.top = y + 'px';
+//         star.style.width = 1 + size + 'px';
+//         star.style.height = 1 + size + 'px';
 
-        star.style.animationDuration = 5 + duration + 's';
-        star.style.animationDelay =  duration + 's';
+//         star.style.animationDuration = 5 + duration + 's';
+//         star.style.animationDelay =  duration + 's';
     
-        scene.append(star)
-        i++;
-      }
+//         scene.append(star)
+//         i++;
+//       }
 
     
-}
+// }
 
 let isLoginFormShown = true;  
 
