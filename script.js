@@ -1,95 +1,14 @@
+import { formSubmits } from './formSubmits.js';
+
 $(document).ready(function () {
-  // Register and Login form submit and validation functionality
 
-  //Login form
-
-  $("#loginForm").submit(function (event) {
-    event.preventDefault();
-
-    const username = $(this).find("#username").val();
-    const password = $(this).find("#password").val();
-    let isLogin = true;
-
-    if (username === "" || username === null) {
-      $("#username").addClass("error");
-      $("#usernameError").show().fadeIn(2000);;
-      isLogin = false;
-    }
-
-    if (password < 4 && password < 20) {
-      $("#password").addClass("error");
-      $("#passwordError").show().fadeIn(2000);
-      isLogin = false;
-    }
-
-    if (!isLogin) {
-      return;
-    } else {
-      // Divs accordion show
-      $("#loginContainer").hide();
-      $("#accordionContainer").show();
-      $(".section-content").hide();
-      $(".section").first().find(".section-content").show();
-    }
-  });
-
-  // Divsaccordion functionality
+  formSubmits();
+ 
+  // Divs accordion functionality
 
   $(".section-header").click(function () {
     $(".section-content").slideUp();
     $(this).next(".section-content").slideDown();
-  });
-
-  // Register form
-
-  $("#registerForm").submit(function (event) {
-    event.preventDefault();
-
-    const username = $(this).find("#newUsername").val();
-    const email = $(this).find("#email").val();
-    const phone = $(this).find("#phone").val();
-    const password = $(this).find("#newPassword").val();
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let isRegister = true;
-
-    if (username === "" || username === null) {
-      $("#newUsername").addClass("error");
-      $("#newUsernameError").show().fadeIn(2000);
-      isRegister = false;
-    }
-
-    if (!emailRegex.test(email)) {
-      $("#email").addClass("error");
-      $("#emailError").show().fadeIn(2000);
-      isRegister = false;
-    }
-
-    if (phone < 4 && phone < 10) {
-      $("#phone").addClass("error");
-      $("#phoneError").show().fadeIn(2000);
-      isRegister = false;
-    }
-
-    if (password < 4 && password < 20) {
-      $("#newPassword").addClass("error");
-      $("#newPasswordError").show().fadeIn(2000);
-      isRegister = false;
-    }
-
-    if (!isRegister) {
-      return;
-    } else {
-      //  Success register button fuciton
-      $("#registerContainer").hide();
-      $("#registerSuccess").show();
-    }
-  });
-
-  $("input").focus(function () {
-    $(this).removeClass("error")
-    $(this).parent().children().eq(2).hide().fadeOut();
-  
   });
 
   // Animation login move out logic
@@ -155,47 +74,47 @@ $(document).ready(function () {
 
   // Starry sky logic
 
-//  let isStartStarts = true;
-//  stars();
+ let isStartStarts = true;
+ stars();
 
-// $('#skyOnbtn').click(function() {{
-//     if(isStartStarts){
-//       isStartStarts = false
-//       $(".header").empty()
+$('#skyOnbtn').click(function() {{
+    if(isStartStarts){
+      isStartStarts = false
+      $(".header").empty()
 
-//     } else {
-//       isStartStarts = true;
-//       stars();
-//     }
-// }})
+    } else {
+      isStartStarts = true;
+      stars();
+    }
+}})
 
 
-// function stars(){
-//     let count = 500;
-//     let scene = $(".header");
-//     let i = 0 
+function stars(){
+    let count = 500;
+    let scene = $(".header");
+    let i = 0 
 
-//       while(i < count){
-//         let star = document.createElement('i');
-//         let x = Math.floor(Math.random() * window.innerWidth);
-//         let y = Math.floor(Math.random() * window.innerHeight);
-//         let duration = Math.random() * 10;
-//         let size = Math.random() * 3;
+      while(i < count){
+        let star = document.createElement('i');
+        let x = Math.floor(Math.random() * window.innerWidth);
+        let y = Math.floor(Math.random() * window.innerHeight);
+        let duration = Math.random() * 10;
+        let size = Math.random() * 3;
 
-//         star.style.left = x + 'px';
-//         star.style.top = y + 'px';
-//         star.style.width = 1 + size + 'px';
-//         star.style.height = 1 + size + 'px';
+        star.style.left = x + 'px';
+        star.style.top = y + 'px';
+        star.style.width = 1 + size + 'px';
+        star.style.height = 1 + size + 'px';
 
-//         star.style.animationDuration = 5 + duration + 's';
-//         star.style.animationDelay =  duration + 's';
+        star.style.animationDuration = 5 + duration + 's';
+        star.style.animationDelay =  duration + 's';
     
-//         scene.append(star)
-//         i++;
-//       }
+        scene.append(star)
+        i++;
+      }
 
     
-// }
+}
 
 let isLoginFormShown = true;  
 
