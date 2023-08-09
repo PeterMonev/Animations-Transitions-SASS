@@ -1,4 +1,4 @@
-import { formSubmits } from './formSubmits.js';
+import { formSubmits } from './src/formSubmits.js';
 
 $(document).ready(function () {
 
@@ -139,7 +139,6 @@ $('#watchSkyBtn').click(function() {
 const sections = $('section');
 const windowHeigth = window.innerHeight;
 const navigation = $('.navigation');
-console.log();
 
 function reset(){
   for(let i = 0; i < navigation.children().length; i++){
