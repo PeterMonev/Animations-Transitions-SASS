@@ -28,12 +28,12 @@ $(document).ready(function () {
   $("#showLoginForm").click(function (event) {
     event.preventDefault();
     $("#registerContainer")
-      .animate({ left: "50%" }, 700)
+      .animate({ left: "75%" }, 700)
       .fadeOut(500, function () {
         $(this).hide();
       });
     $("#loginContainer")
-      .css("left", "0%")
+      .css("left", "12%")
       .fadeIn(1500)
       .show()
       .animate({ left: "50%" }, 1000);
